@@ -1,36 +1,36 @@
-# [Project name]
+# Cyber Defender
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+A browser-based cybersecurity educational game for GCSE Computer Science students covering all seven AQA threat types.
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/cyber-defender run dev` — run the game (port 26270)
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
 
 ## Stack
 
 - pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
+- Frontend: React + Vite + Tailwind CSS
+- Game: HTML5 Canvas with requestAnimationFrame loop
+- No backend required
 
 ## Where things live
 
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
+- `artifacts/cyber-defender/src/pages/Game.tsx` — all game logic, canvas rendering, state machine
+- `artifacts/cyber-defender/src/App.tsx` — router mounting the Game component at "/"
+- `artifacts/cyber-defender/src/index.css` — dark cybersecurity theme (navy/cyan palette)
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- Game state stored in `useRef` (not `useState`) to avoid React re-renders on every frame
+- Canvas-based rendering for smooth 60fps with `requestAnimationFrame`
+- All 7 GCSE AQA threat types with exact educational copy baked in
+- Touch buttons overlaid on canvas for mobile/tablet support
 
 ## Product
 
-_Describe the high-level user-facing capabilities of this app once they exist._
+Cyber Defender is an arcade-style dodge game where players control a shield to avoid 7 types of cyber threats. Each collision triggers an educational pop-up explaining the threat using AQA GCSE terminology. Progressive difficulty (faster threats) keeps engagement up while reinforcing learning through repetition.
 
 ## User preferences
 
@@ -38,7 +38,8 @@ _Populate as you build — explicit user instructions worth remembering across s
 
 ## Gotchas
 
-_Populate as you build — sharp edges, "always run X before Y" rules._
+- The game uses `useRef` for mutable game state — do not convert to `useState` or frame rate will drop
+- All CSS variables in `index.css` must be set (none should remain as `red`) — the scaffold ships with red placeholders
 
 ## Pointers
 

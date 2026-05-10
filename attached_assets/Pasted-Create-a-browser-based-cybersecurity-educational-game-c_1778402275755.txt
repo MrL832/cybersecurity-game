@@ -1,0 +1,61 @@
+Create a browser-based cybersecurity educational game called "Cyber Defender" for GCSE Computer Science students. 
+
+CORE MECHANICS:
+- Player controls a shield icon at the bottom of the screen using LEFT/RIGHT arrow keys or A/D keys
+- Seven types of threats fall from the top of the screen in random lanes
+- Player dodges threats; collision triggers educational pop-up explaining that cyber threat
+- After reading the explanation, player presses SPACE to continue
+
+VISUAL DESIGN:
+- Dark blue/black background with grid lines suggesting a network
+- Player: glowing blue shield emoji or icon
+- Falling threats use distinct icons:
+  * Phishing envelope (social engineering)
+  * Virus bug icon (malware)
+  * Fake website symbol (pharming)
+  * Broken padlock (weak passwords)
+  * Open door with person silhouette (misconfigured access rights)
+  * USB stick (removable media)
+  * Outdated software box with "UPDATE" crossed out (unpatched software)
+
+GAMEPLAY:
+- Threats fall with increasing speed as score increases
+- Score displayed top-left, lives (3 hearts) top-right
+- Smooth 60fps movement with canvas or DOM-based animation
+
+EDUCATIONAL POP-UPS (triggered on collision):
+Each pop-up shows:
+- Large threat icon
+- Threat name in bold
+- 2-3 sentence explanation using GCSE AQA terminology
+- "Press SPACE to continue" prompt
+
+EXACT POP-UP CONTENT:
+
+SOCIAL ENGINEERING: "SOCIAL ENGINEERING ATTACK! Attackers use psychological manipulation to trick people into revealing confidential information. Common techniques include phishing emails and pretexting. This exploits human error rather than technical vulnerabilities."
+
+MALWARE: "MALWARE DETECTED! Malicious code designed to damage, steal data, or disrupt systems. Types include viruses, worms, trojans, ransomware, and spyware. Malware exploits system vulnerabilities to carry out attacks without user knowledge."
+
+PHARMING: "PHARMING REDIRECT! Attackers redirect you from legitimate websites to fake ones without your knowledge. This is done by manipulating DNS settings or modifying host files. Users believe they're on genuine sites and enter credentials."
+
+WEAK PASSWORDS: "WEAK PASSWORD EXPLOITED! Easily guessed passwords like 'password123' or default credentials like 'admin/admin' allow attackers unauthorized access. The Mirai botnet exploited factory default passwords on IoT devices in 2016."
+
+MISCONFIGURED ACCESS RIGHTS: "ACCESS RIGHTS MISCONFIGURED! User accounts have incorrect permissions, giving unauthorized access to sensitive data. This violates the principle of least privilege and can breach data protection laws."
+
+REMOVABLE MEDIA: "UNAUTHORIZED REMOVABLE MEDIA! USB drives and portable storage can introduce malware between systems or enable data theft. Never use found USB devices—nation-state attackers increasingly use these in targeted attacks."
+
+UNPATCHED SOFTWARE: "OUTDATED SOFTWARE VULNERABILITY! Unpatched software contains known security holes that attackers exploit. Outdated systems are the #1 target for cyberattacks and enable ransomware deployment across networks."
+
+TECHNICAL REQUIREMENTS:
+- Single HTML file with embedded CSS and JavaScript
+- Responsive design for classroom computers and tablets
+- No external dependencies except optional CDN for icons
+- Keyboard controls with on-screen touch buttons for mobile
+- Game state: start screen → gameplay → pop-up → continue or game over
+- Final score screen with option to restart
+
+PEDAGOGICAL FEATURES:
+- Brief 2-second pause before pop-up appears (allows threat recognition)
+- Pop-ups use AQA GCSE Computer Science specification language
+- Students must actively dismiss pop-ups (SPACE key) ensuring they read content
+- Progressive difficulty maintains engagement while reinforcing learning through repetition
