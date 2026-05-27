@@ -32,7 +32,7 @@ jobs:
       - name: Build production application
         env:
           PORT: 3000
-          BASE_PATH: /
+          BASE_PATH: /cybersecurity-game/
         run: pnpm --filter @workspace/cyber-defender run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
