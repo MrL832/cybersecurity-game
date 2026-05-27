@@ -29,7 +29,9 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install --no-frozen-lockfile
-      - name: Build
+      - name: Build production application
+        env:
+          PORT: 3000
         run: pnpm --filter @workspace/cyber-defender... run build
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
